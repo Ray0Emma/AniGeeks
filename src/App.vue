@@ -5,14 +5,17 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view />
+  <Footer />
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 export default {
   name: "App",
   components: {
     Navbar,
+    Footer,
   },
 };
 </script>

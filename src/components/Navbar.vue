@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow-sm">
+  <div class="bg-white shadow-sm border-t-4 border-red-500">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Website Logo -->
       <div class="flex justify-center py-6 px-2">
