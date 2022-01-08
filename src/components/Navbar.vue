@@ -9,7 +9,7 @@
             alt="torii-gate logo"
             class="h-8 w-8 mr-2 inline"
           />
-          <span class="font-semibold text-gray-700 text-lg">AniGeeks</span>
+          <span class="font-semibold text-gray-700 text-xl">AniGeeks</span>
         </router-link>
       </div>
     </div>
