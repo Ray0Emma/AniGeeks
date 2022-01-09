@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto px-4">
       <!-- Website Logo -->
       <div class="flex justify-center py-6 px-2">
-        <router-link to="/">
+        <router-link :to="{ Home }">
           <img
             src="../assets/img/logo/torii-gate.png"
             alt="torii-gate logo"

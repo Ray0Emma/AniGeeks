@@ -1,5 +1,6 @@
+<!-- eslint-disable -->
 <template>
-  <footer class="border-t-2 border-gray-100 mt-5">
+  <footer class="bg-white border-t-4 border-red-500 mt-5">
     <div
       class="container flex flex-wrap items-center justify-center px-4 py-8 mx-auto lg:justify-between"
     >
@@ -14,10 +15,10 @@
     </div>
   </footer>
 </template>
-
+<!-- eslint-disable -->
 <script>
+/* eslint-disable */
 export default {
   name: "Footer",
 };
 </script>
-<style scoped></style>
