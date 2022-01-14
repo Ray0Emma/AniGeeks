@@ -1,9 +1,9 @@
 <template>
   <Navbar />
+  <router-view class="container mx-auto px-8" />
   <main class="container mx-auto px-8">
     <SearchBar />
   </main>
-  <router-view class="container mx-auto px-8" />
   <Footer />
 </template>
 
