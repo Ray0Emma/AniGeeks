@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-1 flex items-center space-x-24">
+  <div class="pt-1 pb-4 flex items-center space-x-24">
     <div class="space-y-8">
       <p class="text-gray-500">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
