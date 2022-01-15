@@ -1,6 +1,6 @@
 <template>
   <div class="h-56 pt-20 border-t border-red-300">
-    <form action="">
+    <form action="" @submit.prevent="getAnime">
       <div class="grid grid-cols-7 gap-4 place-content-center">
         <input
           type="text"
@@ -18,5 +18,77 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    getAnime() {
+      // Here we define our query as a multi-line string
+      // Storing it in a separate .graphql/.gql file is also possible
+      let query = `
+      query ($id: Int) {
+        Media (id: $id, type: MANGA) { 
+          id
+          title {
+            romaji
+            english
+            native
+          }
+          type
+          genres
+          episodes
+          coverImage {
+            extraLarge
+            medium
+            color
+          }
+          bannerImage
+          averageScore
+        }
+      }
+      `;
+
+      // Define our query variables and values that will be used in the query request
+      let variables = {
+        id: 98569,
+      };
+
+      // Define the config we'll need for our Api request
+      let url = "https://graphql.anilist.co",
+        options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            query: query,
+            variables: variables,
+          }),
+        };
+
+      // Make the HTTP Api request
+      fetch(url, options)
+        .then(handleResponse)
+        .then(handleData)
+        .catch(handleError);
+
+      function handleResponse(response) {
+        console.log("hi1");
+        return response.json().then(function (json) {
+          return response.ok ? json : Promise.reject(json);
+        });
+      }
+
+      function handleData(data) {
+        console.log("hi2");
+        console.log(data);
+      }
+
+      function handleError(error) {
+        console.log("hi3");
+        alert("Error, check console");
+        console.error(error);
+      }
+    },
+  },
+};
 </script>
