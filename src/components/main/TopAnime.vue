@@ -5,7 +5,9 @@
       Top <span class="text-red-700">6</span> Anime
     </h5>
     <p class="text-gray-400 mt-4">Based on users rating</p>
-    <div class="mt-12 grid grid-cols-6 gap-2 place-content-center">
+    <div
+      class="mt-12 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-2 place-content-center"
+    >
       <div v-for="(media, index) in medias" :key="index">
         <div>
           <img
