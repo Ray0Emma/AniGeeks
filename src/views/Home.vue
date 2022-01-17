@@ -1,11 +1,13 @@
 <template>
-  <div class="pt-1 pb-4 flex items-center space-x-24">
-    <div class="space-y-8">
+  <div class="pt-1 pb-4 flex items-center sm:space-x-10 md:space-x-24">
+    <div class="md:space-y-8 space-y-4">
       <p class="text-gray-500">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-        accusantium exercitationem ipsam fugit nesciunt laborum, consectetur
-        libero adipisci unde ullam voluptates corporis, mollitia non ipsum
-        ratione similique quos animi tenetur!
+        accusantium exercitationem!
+        <span class="hidden md:flex"
+          >ipsam fugit nesciunt laborum, consectetur libero adipisci unde ullam
+          consectetur adipisicing elit. Dicta voluptates!</span
+        >
       </p>
       <button
         class="px-4 py-2 text-sm text-red-600 font-semibold rounded-full border border-red-200 hover:text-white hover:bg-red-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
@@ -15,7 +17,7 @@
     </div>
     <div class="flex-shrink-0">
       <img
-        class=""
+        class="lg:h-96 md:h-80 h-60 object-cover"
         alt="Girl in Red kimono"
         src="../assets/img/circulo_2.png"
       />
