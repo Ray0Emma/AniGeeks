@@ -10,15 +10,21 @@
     >
       <div v-for="(media, index) in medias" :key="index">
         <div>
-          <img
-            src="Hero.jpg"
-            alt=""
-            max-height="400"
-            max-width="240"
-            class="shadow"
-          />
-          <p>{{ media.title }}</p>
-          <p>{{ media.rating }}</p>
+          <div class="relative">
+            <img
+              src="Hero.jpg"
+              alt=""
+              max-height="400"
+              max-width="240"
+              class="shadow"
+            />
+            <p class="absolute left-1 bottom-1 text-xs">
+              <Icon icon="akar-icons:star" class="inline mb-sm mr-sm" />{{
+                media.rating
+              }}
+            </p>
+          </div>
+          <p class="font-semibold text-gray-500 mt-3">{{ media.title }}</p>
         </div>
       </div>
     </div>

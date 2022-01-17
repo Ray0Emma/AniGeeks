@@ -1,7 +1,7 @@
 <template>
   <Navbar />
-  <router-view class="container mx-auto px-8" />
-  <main class="container mx-auto px-8">
+  <router-view class="container-md mx-auto px-8" />
+  <main class="container-md mx-auto px-8">
     <TopAnime />
     <SearchBar />
   </main>
