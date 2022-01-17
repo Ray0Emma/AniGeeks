@@ -6,7 +6,7 @@
     </h5>
     <p class="text-gray-400 mt-4">Based on users rating</p>
     <div
-      class="mt-12 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-2 place-content-center"
+      class="mt-12 grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-2 place-content-center"
     >
       <div v-for="(media, index) in medias" :key="index">
         <div>
