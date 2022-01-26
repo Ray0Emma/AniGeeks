@@ -18,7 +18,7 @@
             }}
           </p>
         </div>
-        <p class="font-semibold text-gray-500 mt-3">{{ media.title }}</p>
+        <p class="font-semibold text-gray-500 mt-3 mb-3">{{ media.title }}</p>
       </div>
     </div>
   </div>
