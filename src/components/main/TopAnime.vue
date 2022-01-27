@@ -37,6 +37,7 @@ export default {
                       romaji
                       english
                     }
+                    averageScore
                     siteUrl
                     isAdult
                     coverImage {
