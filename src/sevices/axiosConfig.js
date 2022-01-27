@@ -4,8 +4,21 @@ const BASE_URL = "https://graphql.anilist.co";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
-  // timeout: 1000,
-  // headers: {'X-Custom-Header': 'foobar'}
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  //   options = {
+  //     method: 'POST',
+  //     headers: {
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //         query: query,
+  //         variables: variables
+  //     })
+  // }
 });
 
 export default {

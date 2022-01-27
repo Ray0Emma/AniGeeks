@@ -6,8 +6,12 @@
       <div>
         <div class="relative">
           <img
-            src="Hero.jpg"
-            alt=""
+            :src="media.coverImage.large"
+            :alt="
+              media.title.english === null
+                ? media.title.romaji
+                : media.title.english
+            "
             max-height="400"
             max-width="240"
             class="shadow"
@@ -18,7 +22,13 @@
             }}
           </p>
         </div>
-        <p class="font-semibold text-gray-500 mt-3 mb-3">{{ media.title }}</p>
+        <p class="font-semibold text-gray-500 mt-3 mb-3">
+          {{
+            media.title.english === null
+              ? media.title.romaji
+              : media.title.english
+          }}
+        </p>
       </div>
     </div>
   </div>
