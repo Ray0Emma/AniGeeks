@@ -26,14 +26,22 @@
       />
     </div>
   </div>
+  <main class="container mx-auto px-8">
+    <TopAnime />
+    <TopManga />
+  </main>
 </template>
 
 <script>
 import SearchModal from "../components/Modal/SearchModal.vue";
+import TopAnime from "../components/main/TopAnime.vue";
+import TopManga from "../components/main/TopManga.vue";
 export default {
   name: "Home",
   components: {
     SearchModal,
+    TopAnime,
+    TopManga,
   },
   data() {
     return {
