@@ -12,8 +12,9 @@
 <script>
 import { Icon } from "@iconify/vue";
 import Card from "./Card.vue";
-// import apiData from "../../sevices/apiData";
+import apiData from "../../sevices/apiData";
 export default {
+  name: "TopAnime",
   data() {
     return {
       topAnime: [],
@@ -54,47 +55,16 @@ export default {
       perPage: 6,
     };
 
-    // Define the config we'll need for our Api request
-    var url = "https://graphql.anilist.co",
-      options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          query: query,
-          variables: variables,
-        }),
-      };
+    const result = await apiData
+      .getTitle({
+        query,
+        variables,
+      })
+      .catch((err) => console.log(err));
 
-    // Make the HTTP Api request
-    await fetch(url, options)
-      .then(handleResponse)
-      .then((data) => (this.topAnime = data.data.Page.media))
-      .catch(handleError);
-
-    function handleResponse(response) {
-      return response.json().then(function (json) {
-        return response.ok ? json : Promise.reject(json);
-      });
-    }
-
-    function handleError(error) {
-      alert("Error, check console");
-      console.error(error);
-    }
-
-    // const result = apiData
-    //   .getTitle({
-    //     query,
-    //     variables,
-    //   })
-    //   .catch((err) => console.log(err));
-
-    // this.topAnime = result.data.data.Page.media.filter((a) => {
-    //   return a.isAdult === false;
-    // });
+    this.topAnime = result.data.data.Page.media.filter((a) => {
+      return a.isAdult === false;
+    });
   },
 
   components: {
