@@ -1,20 +1,33 @@
 <template>
   <div class="modal-backdrop">
-    <div class="modal">
+    <div
+      class="modal shadow-md h-24 w-2/4 py-2 px-4 rounded place-content-center"
+    >
       <slot name="header">
         <button type="button" class="btn-close" @click="close">x</button></slot
       >
 
       <form @submit.prevent="search">
         <input
+          class="border-b w-10/12 border-gray-600 focus:outline-none leading-3"
           type="text"
           placeholder="Search..."
           spellcheck="false"
           autofocus
           v-model="searchText"
         />
-        <button class="ml-2" type="submit" :disabled="buttonDisabled">
-          <Icon icon="fluent:send-24-filled" />
+        <button
+          class="ml-4"
+          type="submit"
+          :disabled="buttonDisabled"
+          role="button"
+        >
+          <Icon
+            icon="fluent:send-24-filled"
+            :inline="true"
+            width="27"
+            height="27"
+          />
         </button>
       </form>
     </div>
@@ -49,7 +62,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.781);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,12 +87,6 @@ export default {
   border-bottom: 1px solid #eeeeee;
   color: #4aae9b;
   justify-content: space-between;
-}
-
-.modal-footer {
-  border-top: 1px solid #eeeeee;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 .modal-body {
