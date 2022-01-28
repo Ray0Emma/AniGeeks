@@ -10,10 +10,13 @@
         >
       </p>
       <button
+        type="button"
+        @click="showModal"
         class="px-4 py-2 text-sm text-red-600 font-semibold rounded-full border border-red-200 hover:text-white hover:bg-red-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
       >
         Start Searching
       </button>
+      <SearchModal v-show="isModalVisible" @close="closeModal" />
     </div>
     <div class="flex-shrink-0">
       <img
@@ -26,8 +29,25 @@
 </template>
 
 <script>
+import SearchModal from "../components/Modal/SearchModal.vue";
 export default {
   name: "Home",
+  components: {
+    SearchModal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
 };
 </script>
 
