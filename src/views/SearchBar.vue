@@ -1,6 +1,6 @@
 <template>
-  <div class="h-56 pt-20">
-    <div class="">
+  <div class="container mx-auto px-8">
+    <div class="mb-5">
       {{ input }}
     </div>
     <Card :medias="searchResult" />
