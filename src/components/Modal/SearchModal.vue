@@ -57,9 +57,9 @@ export default {
         query: { search: this.searchText },
       });
     },
-    components: {
-      Icon,
-    },
+  },
+  components: {
+    Icon,
   },
 };
 </script>
