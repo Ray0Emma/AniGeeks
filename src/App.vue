@@ -4,7 +4,6 @@
   <main class="container mx-auto px-8">
     <TopAnime />
     <TopManga />
-    <SearchBar />
   </main>
   <Footer />
 </template>
@@ -14,14 +13,12 @@ import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import TopAnime from "./components/main/TopAnime.vue";
 import TopManga from "./components/main/TopManga.vue";
-import SearchBar from "./components/main/SearchBar.vue";
 export default {
   name: "App",
   components: {
     Navbar,
     TopAnime,
     TopManga,
-    SearchBar,
     Footer,
   },
 };

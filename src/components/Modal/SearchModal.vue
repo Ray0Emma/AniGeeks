@@ -10,6 +10,7 @@
       <form @submit.prevent="search">
         <input
           class="border-b w-10/12 border-gray-600 focus:outline-none leading-3"
+          v-on:keyup.enter="search"
           type="text"
           placeholder="Search..."
           spellcheck="false"
@@ -42,15 +43,23 @@ export default {
     return {
       buttonDisabled: true,
       searchText: "",
+      searchResult: [],
     };
   },
   methods: {
     close() {
       this.$emit("close");
     },
-  },
-  components: {
-    Icon,
+
+    search() {
+      this.$router.push({
+        path: "/search",
+        query: { search: this.searchText },
+      });
+    },
+    components: {
+      Icon,
+    },
   },
 };
 </script>
