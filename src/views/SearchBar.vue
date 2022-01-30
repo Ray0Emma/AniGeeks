@@ -1,5 +1,6 @@
 <template>
   <div class="container mx-auto px-8">
+    <vue-progress-bar v-if="loading"></vue-progress-bar>
     <div class="my-5">Anime Results for {{ input }}.</div>
     <Card :medias="animeResult" />
     <div class="my-5">Manga Results for {{ input }}.</div>
@@ -15,6 +16,7 @@ export default {
   data() {
     return {
       input: this.$route.query.search,
+      loading: false,
       totalResult: 0,
       type: "ANIME",
       animeResult: [],
@@ -23,6 +25,8 @@ export default {
   },
 
   async created() {
+    this.loading = true;
+    this.$Progress.start();
     const query = `
         query ($id: Int, $page: Int, $perPage: Int, $search: String, $type: MediaType) {
           Page(page: $page, perPage: $perPage) {
@@ -110,6 +114,13 @@ export default {
         variables,
       })
       .catch((err) => console.log(err));
+    setTimeout(() => {
+      this.$Progress.finish();
+      this.loading = false;
+    }, 300);
+    if (this.$Progress.finish()) {
+      this.loading = false;
+    }
 
     this.mangaResult = result.data.data.Page.media;
   },
