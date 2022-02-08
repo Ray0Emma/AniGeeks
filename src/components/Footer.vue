@@ -1,6 +1,6 @@
 <!-- eslint-disable -->
 <template>
-  <footer class="bg-white border-t-4 border-red-500 mt-5">
+  <footer class="bg-white border-t-4 border-red-500 mt-9 inset-x-0 bottom-0">
     <div
       class="container flex flex-wrap items-center justify-center px-4 py-8 mx-auto lg:justify-between"
     >
