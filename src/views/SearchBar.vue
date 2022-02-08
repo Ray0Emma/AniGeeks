@@ -1,9 +1,23 @@
 <template>
-  <div class="container mx-auto px-8">
+  <div class="container mx-auto px-8 mb-20">
     <vue-progress-bar v-if="loading"></vue-progress-bar>
-    <div class="my-5">Anime Results for {{ input }}.</div>
+    <div class="my-10 text-2xl">
+      Results for
+      <span class="text-red-700 text-3xl font-extrabold capitalize">{{
+        input
+      }}</span>
+    </div>
+    <div
+      class="py-2 text-xl w-2/12 font-semibold rounded text-white bg-red-600 border-transparent"
+    >
+      Anime
+    </div>
     <Card :medias="animeResult" />
-    <div class="my-5">Manga Results for {{ input }}.</div>
+    <div
+      class="mt-20 py-2 text-xl w-2/12 font-semibold rounded text-white bg-red-600 border-transparent"
+    >
+      Manga
+    </div>
     <Card :medias="mangaResult" />
   </div>
 </template>
