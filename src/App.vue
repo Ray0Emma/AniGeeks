@@ -33,4 +33,18 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e74242;
+}
 </style>
