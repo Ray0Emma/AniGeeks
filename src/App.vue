@@ -35,8 +35,8 @@ export default {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
