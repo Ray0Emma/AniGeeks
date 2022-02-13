@@ -5,36 +5,44 @@
       <div class="flex flex-wrap justify-center">
         <ul class="flex items-center space-x-4">
           <li>
-            <Icon
-              icon="entypo-social:github-with-circle"
-              :inline="true"
-              width="27"
-              height="27"
-            />
+            <a href="https://github.com/Ray0Emma">
+              <Icon
+                icon="entypo-social:github-with-circle"
+                :inline="true"
+                width="27"
+                height="27"
+              />
+            </a>
           </li>
           <li>
-            <Icon
-              icon="entypo-social:facebook-with-circle"
-              :inline="true"
-              width="27"
-              height="27"
-            />
+            <a href="https://facebook.com/farah.a.elahmadi">
+              <Icon
+                icon="entypo-social:facebook-with-circle"
+                :inline="true"
+                width="27"
+                height="27"
+              />
+            </a>
           </li>
           <li>
-            <Icon
-              icon="entypo-social:twitter-with-circle"
-              :inline="true"
-              width="27"
-              height="27"
-            />
+            <a href="https://twitter.com/ahmadiF__">
+              <Icon
+                icon="entypo-social:twitter-with-circle"
+                :inline="true"
+                width="27"
+                height="27"
+              />
+            </a>
           </li>
           <li>
-            <Icon
-              icon="entypo-social:linkedin-with-circle"
-              :inline="true"
-              width="27"
-              height="27"
-            />
+            <a href="https://www.linkedin.com/in/farah-ahmadi/">
+              <Icon
+                icon="entypo-social:linkedin-with-circle"
+                :inline="true"
+                width="27"
+                height="27"
+              />
+            </a>
           </li>
         </ul>
       </div>
