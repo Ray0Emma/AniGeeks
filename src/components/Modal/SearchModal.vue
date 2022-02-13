@@ -4,8 +4,8 @@
       class="modal shadow-md h-24 w-2/4 py-2 px-4 rounded place-content-center"
     >
       <slot name="header">
-        <button type="button" class="btn-close" @click="close">x</button></slot
-      >
+        <button type="button" class="btn-close" @click="close">x</button>
+      </slot>
 
       <form @submit.prevent="search">
         <input
@@ -85,7 +85,7 @@ export default {
   flex-direction: column;
 }
 
-.modal-header,
+/* .modal-header,
 .modal-footer {
   padding: 15px;
   display: flex;
@@ -101,7 +101,7 @@ export default {
 .modal-body {
   position: relative;
   padding: 20px 10px;
-}
+} */
 
 .btn-close {
   position: absolute;
@@ -112,14 +112,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
-  color: #4aae9b;
+  color: #e74242;
   background: transparent;
-}
-
-.btn-green {
-  color: white;
-  background: #4aae9b;
-  border: 1px solid #4aae9b;
-  border-radius: 2px;
 }
 </style>
