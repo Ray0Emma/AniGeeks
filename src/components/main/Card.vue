@@ -6,6 +6,7 @@
       <div
         class="transform hover:scale-105 transition ease-in-out duration-500"
       >
+        <!-- media link -->
         <a :href="media.siteUrl" target="_blank" rel="noopener noreferrer">
           <img
             :src="media.coverImage.large"
@@ -17,7 +18,10 @@
             class="relative h-60 w-full object-cover object-top shadow-xl rounded"
           />
         </a>
-        <p class="absolute left-1 bottom-1 text-xs text-yellow-500">
+        <p
+          v-if="media.averageScore"
+          class="absolute left-1 bottom-1 text-xs text-yellow-500"
+        >
           <Icon icon="fa-solid:star" class="inline mb-1 mr-2" />{{
             media.averageScore
           }}%
