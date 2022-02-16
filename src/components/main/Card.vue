@@ -7,19 +7,22 @@
         class="transform hover:scale-105 transition ease-in-out duration-500"
       >
         <!-- media link -->
-        <img
-          :src="media.coverImage.large"
-          :alt="
-            media.title.english === null
-              ? media.title.romaji
-              : media.title.english
-          "
+        <a
           :to="{
             name: 'mediafullpage',
             params: { type: mediaType, id: mediaId },
           }"
-          class="relative h-60 w-full object-cover object-top shadow-xl rounded"
-        />
+        >
+          <img
+            :src="media.coverImage.large"
+            :alt="
+              media.title.english === null
+                ? media.title.romaji
+                : media.title.english
+            "
+            class="relative h-60 w-full object-cover object-top shadow-xl rounded"
+          />
+        </a>
         <p
           v-if="media.averageScore"
           class="absolute left-1 bottom-1 text-xs text-yellow-500"

@@ -5,7 +5,7 @@
       Top <span class="text-red-700">6</span> Anime
     </h5>
     <p class="text-gray-400 mt-4">Based on users rating</p>
-    <Card :medias="topAnime" />
+    <Card :medias="topAnime" :mediaId="mediaId" :mediaType="mediaType" />
   </div>
 </template>
 
@@ -18,6 +18,8 @@ export default {
   data() {
     return {
       topAnime: [],
+      mediaId: 0,
+      mediaType: "ANIME",
     };
   },
 
@@ -65,6 +67,8 @@ export default {
     this.topAnime = result.data.data.Page.media.filter((a) => {
       return a.isAdult === false;
     });
+
+    this.mediaId = result.data.data.Page.media.id;
   },
 
   components: {
