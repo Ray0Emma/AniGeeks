@@ -7,17 +7,19 @@
         class="transform hover:scale-105 transition ease-in-out duration-500"
       >
         <!-- media link -->
-        <a :href="media.siteUrl" target="_blank" rel="noopener noreferrer">
-          <img
-            :src="media.coverImage.large"
-            :alt="
-              media.title.english === null
-                ? media.title.romaji
-                : media.title.english
-            "
-            class="relative h-60 w-full object-cover object-top shadow-xl rounded"
-          />
-        </a>
+        <img
+          :src="media.coverImage.large"
+          :alt="
+            media.title.english === null
+              ? media.title.romaji
+              : media.title.english
+          "
+          :to="{
+            name: 'mediafullpage',
+            params: { type: mediaType, id: mediaId },
+          }"
+          class="relative h-60 w-full object-cover object-top shadow-xl rounded"
+        />
         <p
           v-if="media.averageScore"
           class="absolute left-1 bottom-1 text-xs text-yellow-500"
@@ -44,6 +46,14 @@ export default {
   name: "Card",
   props: {
     medias: Array,
+    mediaId: {
+      type: Number,
+      default: 0,
+      requred: true,
+    },
+    mediaType: {
+      type: String,
+    },
   },
   components: {
     Icon,
