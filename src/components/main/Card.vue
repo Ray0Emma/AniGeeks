@@ -7,12 +7,7 @@
         class="transform hover:scale-105 transition ease-in-out duration-500"
       >
         <!-- media link -->
-        <a
-          :href="{
-            name: 'mediafullpage',
-            params: { type: mediaType, id: media.id },
-          }"
-        >
+        <a :href="media.id">
           <img
             :src="media.coverImage.large"
             :alt="
