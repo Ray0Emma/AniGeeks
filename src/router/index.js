@@ -21,7 +21,6 @@ const routes = [
     path: "/search/:type/:id",
     name: "mediafullpage",
     component: () => import("../views/MediaFullPage.vue"),
-    props: true,
   },
   {
     path: "/404",

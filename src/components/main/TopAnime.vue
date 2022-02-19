@@ -18,8 +18,7 @@ export default {
   data() {
     return {
       topAnime: [],
-      // mediaId: 0,
-      mediaType: "ANIME",
+      mediaType: "anime",
     };
   },
 
