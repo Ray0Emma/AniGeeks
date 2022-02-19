@@ -5,7 +5,7 @@
       Top <span class="text-red-700">6</span> Manga
     </h5>
     <p class="text-gray-400 mt-4">Based on users rating</p>
-    <Card :medias="topManga" />
+    <Card :medias="topManga" :mediaType="mediaType" />
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       topManga: [],
+      mediaType: "manga",
     };
   },
 
