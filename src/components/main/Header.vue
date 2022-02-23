@@ -2,11 +2,12 @@
   <div class="pt-1 pb-4 flex items-center sm:space-x-10 md:space-x-24">
     <div>
       <p class="text-gray-500">
-        Search, and descaver your favorite anime or manga!
+        Looking for something more specific? We believe there's an anime for
+        everyone.
         <span class="hidden md:flex mx"
-          >Here is where you can find more informations abour your favorite
-          anime or manga!</span
-        >
+          >Try searching right now! Here is where you can find more informations
+          abour your favorite anime or manga!
+        </span>
       </p>
       <button
         type="button"
