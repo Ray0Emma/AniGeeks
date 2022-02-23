@@ -14,7 +14,7 @@
         >
           Anime
         </div>
-        <Card :medias="animeResult" :mediaType="type" />
+        <Card :medias="animeResult" :mediaType="type.toLowerCase()" />
       </div>
       <div class="" v-if="mangaResult.length">
         <div
@@ -22,7 +22,7 @@
         >
           Manga
         </div>
-        <Card :medias="mangaResult" :mediaType="type" />
+        <Card :medias="mangaResult" :mediaType="mangatype" />
       </div>
     </div>
     <div v-else>
@@ -47,6 +47,7 @@ export default {
       loading: false,
       totalResult: 0,
       type: "ANIME",
+      mangatype: "manga",
       animeResult: [],
       mangaResult: [],
     };
