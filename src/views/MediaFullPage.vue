@@ -1,47 +1,121 @@
 <template>
   <div>
-    <div v-for="(media, index) in medias" :key="index">
-      <img
-        :src="media.coverImage.large"
-        :alt="
-          media.title.english === null
-            ? media.title.romaji
-            : media.title.english
-        "
-        class="relative h-60 w-full object-cover object-top shadow-xl rounded"
-      />
-
-      <p
-        v-if="media.averageScore"
-        class="absolute left-1 bottom-1 text-xs text-black"
-      >
-        {{
-          media.title.english === null
-            ? media.title.romaji
-            : media.title.english
-        }}
-      </p>
+    <div class="bg-indigo-300">
+      <img :src="img" class="object-fill w-full shadow-xl rounded" />
     </div>
+    <!-- {{ medias.coverImage.extraLarge }} -->
   </div>
 </template>
 <script>
+//
+import apiData from "../sevices/apiData";
 // import { Icon } from "@iconify/vue";
 export default {
   data() {
-    return {};
+    return {
+      medias: [],
+      mediaType: this.$route.params.type,
+      mediaId: this.$route.params.id,
+      img: String,
+    };
   },
-  name: "MediaFullPage",
-  props: {
-    medias: Array,
-    mediaId: {
-      type: Number,
-      default: 0,
-      requred: true,
-    },
-    mediaType: {
-      type: String,
-    },
+  async mounted() {
+    console.log(this.mediaId);
+    let query = `
+          query ($id: Int) {
+              Media (id: $id, type: ANIME ) {         
+                title {
+                    english
+                    romaji
+                    native
+                }
+                status
+                startDate {
+                    year
+                }
+                type
+                genres
+                episodes
+                id
+                isFavourite
+                chapters
+                duration
+                status
+                nextAiringEpisode {
+                    airingAt
+                }
+                relations {
+                    nodes {
+                        id
+                        type
+                        title {
+                            english
+                            romaji
+                        }
+                        coverImage {
+                            extraLarge
+                            medium
+                            large
+                            color
+                        } 
+                    }
+                }
+                description (asHtml: true)
+                startDate {
+                    day
+                    month
+                    year
+                }
+                endDate {
+                    day
+                    month
+                    year
+                }
+                coverImage {
+                    extraLarge
+                    medium
+                    color
+                }
+                bannerImage
+                averageScore
+                characters(sort: FAVOURITES_DESC) {
+                    nodes {
+                        name {
+                            first
+                            last
+                        }
+                        image {
+                            medium
+                            large
+                        }
+                        id
+                    }
+                }
+                streamingEpisodes {
+                    title
+                    thumbnail
+                    url
+                }
+              }
+    }`;
+
+    let variables = {
+      id: this.$route.params.id,
+    };
+
+    const result = await apiData
+      .getTitle({
+        query,
+        variables,
+      })
+      .catch((err) => console.log(err));
+
+    this.medias = result.data.data.Media;
+
+    this.img = result.data.data.Media.bannerImage;
+    console.log(this.img);
   },
+
   components: {
     // Icon,
   },

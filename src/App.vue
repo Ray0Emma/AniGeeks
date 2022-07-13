@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <router-view class="container mx-auto px-8" />
+  <router-view class="container mx-auto" />
   <Footer />
 </template>
 

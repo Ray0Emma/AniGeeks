@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-1 pb-4 flex items-center sm:space-x-10 md:space-x-24">
+  <div class="pt-1 pb-4 flex items-center sm:space-x-10 md:space-x-24 px-8">
     <div>
       <p class="text-gray-500">
         Looking for something more specific? We believe there's an anime for

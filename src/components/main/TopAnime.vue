@@ -68,7 +68,7 @@ export default {
     });
 
     // this.mediaId = result.data.data.Page.media.id;
-    console.log(this.mediaId);
+    // console.log(this.mediaId);
   },
 
   components: {

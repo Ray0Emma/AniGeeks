@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-12 grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 place-content-center"
+    class="mt-12 grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 place-content-center px-8"
   >
     <div v-for="(media, index) in medias" :key="index">
       <div
