@@ -1,14 +1,48 @@
-<template>
-  <div class="pt-1 pb-4 flex items-center sm:space-x-10 md:space-x-24 px-8">
-    <div>
-      <p class="text-gray-500">
-        Looking for something more specific? We believe there's an anime for
-        everyone.
-        <span class="hidden md:flex mx"
-          >Try searching right now! Here is where you can find more informations
-          abour your favorite anime or manga!
-        </span>
-      </p>
+<template class="relative">
+  <div class="pt-1 flex pb-4 items-center sm:space-x- md:space-x- px-10">
+    <div class="bg-red-600 -z-10">
+      <div class="">
+        <img
+          class="object-cover"
+          alt="Girl in Red kimono"
+          src="https://img.icons8.com/emoji/96/000000/white-flower.png"
+        />
+      </div>
+      <div class="">
+        <img
+          class="object-cover"
+          alt="Girl in Red kimono"
+          src="https://img.icons8.com/emoji/96/000000/white-flower.png"
+        />
+      </div>
+      <div class="hidden sm:flex">
+        <img
+          class="object-cover bg-opacity-40"
+          alt="Girl in Red kimono"
+          src="https://img.icons8.com/emoji/96/000000/white-flower.png"
+        />
+      </div>
+      <div class="hidden md:flex">
+        <img
+          class="object-cover"
+          alt="Girl in Red kimono"
+          src="https://img.icons8.com/emoji/96/000000/white-flower.png"
+        />
+      </div>
+      <div class="hidden md:flex">
+        <img
+          class="object-cover"
+          alt="Girl in Red kimono"
+          src="https://img.icons8.com/emoji/96/000000/white-flower.png"
+        />
+      </div>
+    </div>
+
+    <div class="mx-auto">
+      <h1 class="text-xl sm:text-5xl md:text-7xl font-medium md:font-semibold">
+        Your Portal to the <br />
+        <span class="">Anime World </span>
+      </h1>
       <button
         type="button"
         @click="showModal"
@@ -17,13 +51,6 @@
         Start Searching
       </button>
       <SearchModal v-show="isModalVisible" @close="closeModal" />
-    </div>
-    <div class="flex-shrink-0">
-      <img
-        class="lg:h-96 md:h-80 h-60 object-cover"
-        alt="Girl in Red kimono"
-        src="../../assets/img/circulo_2.png"
-      />
     </div>
   </div>
 </template>
