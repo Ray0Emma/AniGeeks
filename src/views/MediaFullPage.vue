@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="img != ''" class="w-full">
-      <img :src="img" class="object-fill w-full shadow-xl rounded" />
+    <div v-if="img != null" class="w-full h-full">
+      <img :src="img" class="object-fill w-full max-h-80" />
     </div>
     <!-- {{ medias.coverImage.extraLarge }} -->
   </div>
