@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       topManga: [],
-      mediaType: "manga",
+      mediaType: "MANGA",
     };
   },
 

@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-white shadow-sm">
+  <nav
+    class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-40"
+  >
     <div class="max-w-6xl mx-auto px-4">
       <!-- Website Logo -->
       <div class="flex justify-center py-6 px-2">
@@ -13,7 +15,7 @@
         </router-link>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

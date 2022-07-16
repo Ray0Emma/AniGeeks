@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-indigo-300">
+    <div v-if="img != ''" class="w-full">
       <img :src="img" class="object-fill w-full shadow-xl rounded" />
     </div>
     <!-- {{ medias.coverImage.extraLarge }} -->
@@ -14,16 +14,16 @@ export default {
   data() {
     return {
       medias: [],
-      mediaType: this.$route.params.type,
+      mediaType: this.$route.params.type.toUpperCase(),
       mediaId: this.$route.params.id,
       img: String,
     };
   },
   async mounted() {
-    console.log(this.mediaId);
+    console.log(this.mediaType);
     let query = `
-          query ($id: Int) {
-              Media (id: $id, type: ANIME ) {         
+          query ($id: Int, $type: MediaType) {
+              Media (id: $id, type: $type) {         
                 title {
                     english
                     romaji
@@ -100,7 +100,8 @@ export default {
     }`;
 
     let variables = {
-      id: this.$route.params.id,
+      id: this.mediaId,
+      type: this.mediaType,
     };
 
     const result = await apiData

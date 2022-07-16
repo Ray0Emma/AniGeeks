@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-backdrop">
+  <div class="modal-backdrop z-10">
     <div
       class="modal shadow-md h-24 w-2/4 py-2 px-4 rounded place-content-center"
     >
